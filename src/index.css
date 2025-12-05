@@ -81,3 +81,20 @@ body {
   animation: borderChangeColor 7s ease-in-out infinite;
   border: 1rem double white;
 }
+
+@keyframes lambai {
+  0% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+
+.animate-lambai {
+  animation: lambai 4s ease-in-out infinite;
+  transform-origin: bottom right;
+}

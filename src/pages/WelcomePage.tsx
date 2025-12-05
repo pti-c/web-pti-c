@@ -18,9 +18,9 @@ const WelcomePage = () => {
   useEffect(() => {
     const typed = new Typed(helloRef.current, {
       strings: [
-        `Hi ${
+        `Halo ${
           name ?? "guys"
-        }! Seperti yang kalian tahu, aku Neco — maskot dari Neo-C, Pertama-tama aku mau ngasih kalian semangat buat ngerjain TA(Tugas Akhir), tugas-tugas lainnya dan jangan lupa belajar buat UAS. Percayalah, kalian harus benar-benar menikmati masa kuliah ini sebelum masuk ke dunia kerja — sebelum kalian merindukan suasana kelas, laprak, positron, tugas bareng, dan momen-momen seru bersama teman-teman. Kadang kita merasa kurang bersyukur karena nggak bisa kuliah di kampus impian, tapi tanpa kalian sadari, banyak banget orang di luar sana yang ingin ada di posisi kalian. Sesekali coba lihat ke bawah dan syukuri sejauh apa kalian sudah melangkah. Dan buat teman-teman yang linjur, jangan khawatir. Kalian pasti bisa kok! Kalian nggak sendirian. Kalau bingung atau kesulitan, jangan ragu buat tanya-tanya ke teman — pasti dibantu. So enjoy the process guys! Sampai jumpa di semester 2! 👋`,
+        }! Seperti yang kalian tahu, aku Neco — maskot dari Neo-C, Pertama-tama aku mau ngasih kalian semangat buat ngerjain TA(Tugas Akhir), tugas-tugas lainnya dan jangan lupa belajar buat UAS. Percayalah, kalian harus benar-benar menikmati masa kuliah ini sebelum masuk ke dunia kerja — sebelum kalian merindukan suasana kelas, laprak, positron, tugas bareng, dan momen-momen seru bersama teman-teman. Kadang kita merasa kurang bersyukur karena nggak bisa kuliah di kampus impian, tapi tanpa kalian sadari, banyak banget orang di luar sana yang ingin ada di posisi kalian. Sesekali coba lihat ke bawah dan syukuri sejauh apa kalian sudah melangkah. Dan buat teman-teman yang linjur, jangan khawatir. Kalian pasti bisa kok! Kalian nggak sendirian. Kalau bingung atau kesulitan, jangan ragu buat tanya-tanya ke teman — pasti dibantu. So enjoy the process guys! Sampai jumpa di semester 2! `,
       ],
       loop: false,
       backDelay: 1000,
@@ -50,7 +50,9 @@ const WelcomePage = () => {
             <span
               ref={helloRef}
               className="text-white text-xs md:text-sm w-full md:min-w-2xl"
-            ></span>
+            >
+
+            </span>
           </div>
         </div>
       )}

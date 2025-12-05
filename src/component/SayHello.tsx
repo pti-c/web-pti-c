@@ -31,7 +31,7 @@ const SayHello = () => {
       <div className="flex gap-2 justify-between md:justify-evenly items-center">
         <img
           className="w-24 md:w-32 animate-pulse"
-          src="public/logo-removebg-preview.png"
+          src="/logo-removebg-preview.png"
           alt="Logo"
         />
         <h1 className="text-[#00eaff] text-xl md:text-2xl">NEO-C 2025</h1>

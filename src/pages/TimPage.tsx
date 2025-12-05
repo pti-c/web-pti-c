@@ -3,27 +3,27 @@ import Navbar from "../layouts/Navbar";
 const TimPage = () => {
   const datas = [
     {
-      foto: "public/neco.png",
+      foto: "/neco.png",
       nama: "nama ketua",
     },
     {
-      foto: "public/neco.png",
+      foto: "/neco.png",
       nama: "nama wakil",
     },
     {
-      foto: "public/neco.png",
+      foto: "/neco.png",
       nama: "nama sekretaris",
     },
     {
-      foto: "public/neco.png",
+      foto: "/neco.png",
       nama: "nama anggota",
     },
     {
-      foto: "public/neco.png",
+      foto: "/neco.png",
       nama: "nama anggota",
     },
     {
-      foto: "public/neco.png",
+      foto: "/neco.png",
       nama: "nama anggota",
     },
   ];

@@ -14,8 +14,8 @@ const Navbar = () => {
       <div className="w-full flex flex-wrap items-center justify-between mx-auto p-4 ">
         <a href="/" className="w-1/2 flex items-center justify-start space-x-3 rtl:space-x-reverse">
           <img
-            src="public/logo-removebg-preview.png"
-            className="h-7"
+            src="/logo-removebg-preview.png"
+            className="w-12"
             alt="Flowbite Logo"
           />
           {/* <span className="self-center text-xl text-heading font-semibold whitespace-nowrap">

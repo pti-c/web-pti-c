@@ -16,6 +16,7 @@ const WelcomePage = () => {
 
   /**handle typed */
   useEffect(() => {
+    if (!helloRef.current) return;
     const typed = new Typed(helloRef.current, {
       strings: [
         `Halo ${
@@ -44,15 +45,13 @@ const WelcomePage = () => {
             <img
               id="necoImage"
               className="w-52 md:w-96"
-              src="public/neco.png"
+              src="/neco.png"
               alt="Neco"
             />
             <span
               ref={helloRef}
               className="text-white text-xs md:text-sm w-full md:min-w-2xl"
-            >
-
-            </span>
+            ></span>
           </div>
         </div>
       )}

@@ -43,7 +43,7 @@ const TimPage = () => {
       // Destroy Typed instance during cleanup to stop animation
       typed.destroy();
     };
-  }, [forcedRef.current, message]);
+  }, [message]);
   return (
     <div className="w-full h-screen pt-10">
       <Navbar />

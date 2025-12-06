@@ -49,13 +49,13 @@ const TimPage = () => {
     };
   }, [forcedRef.current, message]);
 
-  const [fotoId, setFotoId] = useState<TypeTimMap | null>(null);
+  // const [fotoId, setFotoId] = useState<TypeTimMap | null>(null);
 
-  const handleChangeImage = (id: number) => {
-    const data = tim.data.find((d: TypeTimMap) => d.id === id);
+  // const handleChangeImage = (id: number) => {
+  //   const data = tim.data.find((d: TypeTimMap) => d.id === id);
 
-    setFotoId(data ?? null);
-  };
+  //   setFotoId(data ?? null);
+  // };
   return (
     <div className="w-full pt-10">
       <Navbar />

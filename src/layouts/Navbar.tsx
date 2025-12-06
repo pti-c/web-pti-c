@@ -8,11 +8,14 @@ const Navbar = () => {
     <nav
       className={`${
         !name && "hidden"
-      } bg-neutral-primary fixed w-full z-40 top-0 start-0 border-b border-default rounded-md bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0  text-white`}
+      } bg-neutral-primary fixed w-full z-40 top-0 start-0 border-b border-[#00eaff] rounded-md bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0  text-white`}
     >
       {/* max-w-xl */}
       <div className="w-full flex flex-wrap items-center justify-between mx-auto p-4 ">
-        <a href="/" className="w-1/2 flex items-center justify-start space-x-3 rtl:space-x-reverse">
+        <a
+          href="/"
+          className="w-1/2 flex items-center justify-start space-x-3 rtl:space-x-reverse"
+        >
           <img
             src="/logo-removebg-preview.png"
             className="w-12"
@@ -49,7 +52,7 @@ const Navbar = () => {
         </button> */}
         <Link
           to={`/tim`}
-          // block 
+          // block
           className="py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent flex justify-end w-1/2"
         >
           Tim

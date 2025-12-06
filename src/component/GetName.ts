@@ -1,6 +1,6 @@
 export const names = [
   "ROBOT 🎮",
-  "ROBOT 👱‍♀️",
+  "HANTU 👱‍♀️",
   "MUHAMMAD ZAKY ZHALIFUNNAS",
   "NABILAH NUR RAMADHANIA",
   "NABILA NUR RIZKIYAH",

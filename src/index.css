@@ -6,9 +6,6 @@
   background: radial-gradient(circle at top, #0e0220, #000014);
 }
 
-body {
-  width: 100%;
-}
 @keyframes rainbow {
   0% {
     background-position: 0% 50%;
@@ -97,4 +94,33 @@ body {
 .animate-lambai {
   animation: lambai 4s ease-in-out infinite;
   transform-origin: bottom right;
+}
+
+.w-full {
+  width: 100%;
+}
+.text-outline {
+  text-shadow: 1px 1px 0 #000;
+}
+.bg-sh {
+  background: conic-gradient(
+    from 270deg,
+    #ff005e 0deg 90deg,
+    #ffea00 90deg 180deg,
+    #00eaff 180deg 270deg,
+    #ff00f7 270deg 360deg
+  );
+  animation: bg-rotate 4s ease-in-out infinite;
+}
+
+@keyframes bg-rotate {
+  0% {
+    background: conic-gradient(
+      from 270deg,
+      #ff00f7 0deg 90deg,
+      #ff005e 90deg 180deg,
+      #ffea00 180deg 270deg,
+      #00eaff 270deg 360deg
+    );
+  }
 }

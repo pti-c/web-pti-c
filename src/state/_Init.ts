@@ -1,7 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
-/** Get a current parawi (hadist) */
 export const useCurrentSayHello = create(
   persist(
     (set) => ({
@@ -10,10 +9,10 @@ export const useCurrentSayHello = create(
         set({ isSayHello: data });
       },
     }),
-    { name: "_CurrentSayHello" }
+    { name: "_CurrentSayHello " }
   )
 );
-/** Get a current parawi (hadist) */
+/** Get a current name */
 export const useCurrentName = create(
   persist(
     (set) => ({
@@ -23,5 +22,17 @@ export const useCurrentName = create(
       },
     }),
     { name: "_CurrentName" }
+  )
+);
+/** Get a current step (tim page) */
+export const useForced = create(
+  persist(
+    (set) => ({
+      step: 1,
+      setStep: (data: number) => {
+        set({ step: data });
+      },
+    }),
+    { name: "_CurrentSte" }
   )
 );

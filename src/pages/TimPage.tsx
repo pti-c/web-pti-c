@@ -136,10 +136,11 @@ const TimPage = () => {
             >
               <img
                 className="rounded-t-base w-full transition-all duration-500"
-                src={`${fotoId?.id === t.id ? fotoId.foto1 : t.foto2}`}
-                onClick={() => {
-                  handleChangeImage(t.id);
-                }}
+                // src={`${fotoId?.id === t.id ? fotoId.foto1 : t.foto2}`}
+                src={`${t.foto2}`}
+                // onClick={() => {
+                //   handleChangeImage(t.id);
+                // }}
                 alt=""
               />
               <div className="p-6 text-center">

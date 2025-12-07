@@ -5,6 +5,8 @@ import Typed from "typed.js";
 import { useForcedTim } from "../state/_Init";
 import { Link } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
+import Quest from "../component/Quest";
+import Btn from "../Element/Btn";
 
 const TimPage = () => {
   /** handle caching current step user */
@@ -23,6 +25,19 @@ const TimPage = () => {
 
     setPos({ x: randomX, y: randomY });
   };
+
+  /**handle do not scroll if step is 1 or 2 */
+  useEffect(() => {
+    if (step === 1) {
+      document.body.style.overflow = "hidden";
+    } else if (step === 2) {
+      document.body.style.overflow = "hidden";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [step]);
 
   /** handle message to user */
   let message = "";
@@ -61,70 +76,59 @@ const TimPage = () => {
   return (
     <MainLayout>
       {step === 1 && (
-        <div className="fixed top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 z-50">
-          <div className="flex flex-col justify-between min-w-xs md:min-w-xl md:max-w-xl bg-white rounded-md relative p-4 overflow-hidden drop-shadow-[0_0_12px_#00eaff] opacity-90">
-            <span
-              ref={forcedRef}
-              className="text-xs md:text-base block max-w-full min-h-20 md:min-h-16"
-            ></span>
-            <div className="w-full min-h-32 relative z-10">
-              <button
-                type="button"
-                onClick={() => setStep(2)}
-                className="absolute bottom-0 left-0 bg-[#00eaff] px-4 py-2 rounded-md border border-black"
-              >
-                Ya
-              </button>
-              <button
-                type="button"
-                className="absolute bottom-0 right-0 bg-[#00eaff] px-4 py-2 rounded-md border border-black"
-                onClick={moveButton}
-                style={{
-                  transform: `translate(${pos.x}px, ${pos.y}px)`,
-                  transition: "0.2s ease",
-                }}
-              >
-                Tidak
-              </button>
-            </div>
-            <div className="w-full flex justify-center animate-left-to-mid relative">
-              <img
-                src="/necos/neco-melas.png"
-                className="w-24 sm:w-32"
-                alt=""
-              />
-              <img src="/necos/neco-qna.png" className="w-44" alt="" />
-            </div>
+        <Quest>
+          <span
+            ref={forcedRef}
+            className="text-xs md:text-base block max-w-full min-h-20 md:min-h-16"
+          ></span>
+          <div className="w-full min-h-32 relative z-10">
+            <Btn
+              onClick={() => setStep(2)}
+              className="absolute bottom-0 left-0"
+            >
+              Iya
+            </Btn>
+            <Btn
+              style={{
+                transform: `translate(${pos.x}px, ${pos.y}px)`,
+                transition: "0.2s ease",
+              }}
+              onClick={moveButton}
+              className="absolute bottom-0 right-0"
+            >
+              Tidak
+            </Btn>
           </div>
-        </div>
+          <div className="w-full flex justify-center animate-left-to-mid relative">
+            <img src="/necos/neco-melas.png" className="w-24 sm:w-32" alt="" />
+            <img src="/necos/neco-qna.png" className="w-44" alt="" />
+          </div>
+        </Quest>
       )}
       {step === 2 && (
-        <div className="fixed top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 z-50">
-          <div className="flex flex-col justify-between min-w-xs md:min-w-xl md:max-w-xl bg-white rounded-md relative p-4 overflow-hidden drop-shadow-[0_0_12px_#00eaff] opacity-90">
-            <span
-              ref={forcedRef}
-              className="text-base block max-w-full min-h-20 md:min-h-16"
-            ></span>
-            <div className="w-full flex justify-between items-center">
-              <img
-                src="/necos/neco-resek.png"
-                className="relative w-24 sm:w-32 animate-left-to-left"
-                alt=""
-              />
-              <button
-                onClick={() => setStep(3)}
-                className="bg-[#00eaff] px-4 py-2 rounded-md border border-black"
-              >
-                Lanjut
-              </button>
-            </div>
+        <Quest>
+          <span
+            ref={forcedRef}
+            className="text-base block max-w-full min-h-20 md:min-h-16"
+          ></span>
+          <div className="w-full flex justify-between items-center">
+            <img
+              src="/necos/neco-resek.png"
+              className="relative w-24 sm:w-32 animate-left-to-left"
+              alt=""
+            />
+            <Btn
+              onClick={() => setStep(3)}
+            >
+              Lanjut
+            </Btn>
           </div>
-        </div>
+        </Quest>
       )}
       <div
-        className={`${step === 1 && "blur-2xl pointer-events-none"} ${
-          step === 2 && "blur-md pointer-events-none"
-        } ${step === 3 && "blur-none"} flex flex-wrap justify-center gap-y-2 pt-4`}
+        className={`${step === 1 && "blur-2xl"} ${step === 2 && "blur-md"} ${
+          step === 3 && "blur-none"
+        } flex flex-wrap justify-center gap-y-2 pt-4`}
       >
         <span ref={step === 3 ? forcedRef : undefined}></span>
         {(tim as TypeTim).data.map((t: TypeTimMap) => (

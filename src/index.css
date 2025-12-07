@@ -3,7 +3,7 @@
 
 :root {
   font-family: "Press Start 2P", system-ui, sans-serif;
-  background: radial-gradient(circle at top, #0e0220, #000014);
+  background: linear-gradient(to left, #0e0220, #000014);
 }
 
 @keyframes rainbow {

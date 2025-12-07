@@ -6,6 +6,7 @@ import { useCurrentName, useForcedTimById } from "../state/_Init";
 import { useEffect, useRef } from "react";
 import Typed from "typed.js";
 import Quest from "../component/Quest";
+import Btn from "../Element/Btn";
 const TimById = () => {
   /** id member */
   const { id } = useParams();
@@ -26,6 +27,21 @@ const TimById = () => {
 
   /** handle message to user */
   let message = "";
+
+  /**handle do not scroll if step is 1 or 2 */
+  useEffect(() => {
+    if (step.no === 1) {
+      document.body.style.overflow = "hidden";
+    } else if (step.no === 2) {
+      document.body.style.overflow = "hidden";
+    } else if (step.no === 3) {
+      document.body.style.overflow = "hidden";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [step.no]);
 
   if (step.no === 1) {
     message = `Haloo ${name},  perkenalkan dia ${data?.nama}👋, dia tuh dikenal sangat suka bermain sepak bola loh... ⚽`;
@@ -70,7 +86,7 @@ const TimById = () => {
             <div className="w-full flex justify-center gap-2  relative animate-left-to-mid my-4">
               <img
                 src={`${data?.foto1}`}
-                className="w-24 sm:w-32 relative"
+                className="w-24 sm:w-32 relative "
                 alt=""
               />
               <img
@@ -79,13 +95,9 @@ const TimById = () => {
                 alt=""
               />
             </div>
-            <button
-              type="button"
-              onClick={() => setStep({ id: id, no: 2 })}
-              className="my-4 bg-[#00eaff] px-4 py-2 rounded-md border border-black"
-            >
+            <Btn onClick={() => setStep({ id: id, no: 2 })} className="my-4">
               Lanjut
-            </button>
+            </Btn>
           </Quest>
         )}
         {step.no === 2 && (
@@ -99,13 +111,7 @@ const TimById = () => {
               className="w-32 relative animate-left-to-mid "
               alt=""
             />
-            <button
-              type="button"
-              onClick={() => setStep({ id: id, no: 3 })}
-              className=" bg-[#00eaff] px-4 py-2 rounded-md border border-black"
-            >
-              Lanjut
-            </button>
+            <Btn onClick={() => setStep({ id: id, no: 3 })}>Lanjut</Btn>
           </Quest>
         )}
         {step.no === 3 && (
@@ -119,13 +125,7 @@ const TimById = () => {
               className="w-32 relative animate-left-to-mid "
               alt=""
             />
-            <button
-              type="button"
-              onClick={() => setStep({ id: id, no: 4 })}
-              className=" bg-[#00eaff] px-4 py-2 rounded-md border border-black"
-            >
-              Lanjut
-            </button>
+            <Btn onClick={() => setStep({ id: id, no: 4 })}>Lanjut</Btn>
           </Quest>
         )}
         <div
@@ -138,7 +138,7 @@ const TimById = () => {
           <span ref={step.no === 4 ? forcedRef : undefined}></span>
           <div className="max-w-sm md:max-w-2xl shadow-xs text-white p-1 flex flex-col md:flex-row justify-evenly z-50">
             <img
-              className="rounded-t-base max-w-xs transition-all duration-500 bg-no-repeat rounded-xl md:rounded-3xl"
+              className="rounded-t-base max-w-xs transition-all duration-500 bg-no-repeat rounded-xl md:rounded-3xl shadow-[0_0_12px_#00eaff]"
               // src={`${fotoId?.id === t.id ? fotoId.foto1 : t.foto2}`}
               src={`${data?.foto1}`}
               loading="lazy"

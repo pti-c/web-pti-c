@@ -1,37 +1,37 @@
 import { Link } from "react-router-dom";
 import { useCurrentSayHello } from "../state/_Init";
+import { useState } from "react";
 
 const Navbar = () => {
   /** cache current name */
   /** cache is say hello */
   const isSayHelloVisible = useCurrentSayHello((s: any) => s.isSayHello);
+
+  const [openNav, setOpenNav] = useState(false);
   return (
     <nav
       className={`${
         isSayHelloVisible && "hidden"
-      } bg-neutral-primary fixed w-full z-60 top-0 start-0 rounded-md bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0  text-white`}
+      } bg-neutral-primary fixed w-full z-60 top-0 start-0 backdrop-filter backdrop-blur-sm bg-opacity-10 `}
     >
-      {/* max-w-xl */}
-      <div className="w-full flex flex-wrap items-center justify-between mx-auto p-4 ">
-        <a
-          href="/"
-          className="w-1/2 flex items-center justify-start space-x-3 rtl:space-x-reverse"
-        >
+      <div className="max-w-7xl flex flex-wrap md:flex-nowrap items-center justify-between mx-auto p-4 ">
+        <a className="flex items-center space-x-3 rtl:space-x-reverse">
           <img
             src="/logo-removebg-preview.png"
             className="w-10"
-            alt="Flowbite Logo"
+            alt="Logo Neo-c"
           />
           {/* <span className="self-center text-xl text-heading font-semibold whitespace-nowrap">
             Flowbite
           </span> */}
         </a>
-        {/* <button
+        <button
           data-collapse-toggle="navbar-default"
           type="button"
-          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary"
+          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary text-white"
           aria-controls="navbar-default"
           aria-expanded="false"
+          onClick={() => setOpenNav(!openNav)}
         >
           <span className="sr-only">Open main menu</span>
           <svg
@@ -50,59 +50,35 @@ const Navbar = () => {
               d="M5 7h14M5 12h14M5 17h14"
             />
           </svg>
-        </button> */}
-        <Link
-          to={`/tim`}
-          // block
-          className="py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent flex justify-end w-1/2"
+        </button>
+
+        <div
+          className={`${
+            openNav
+              ? "block md:flex md:justify-end"
+              : "hidden md:flex md:justify-end"
+          } w-full `}
+          id="navbar-default"
         >
-          Tim
-        </Link>
-        {/* <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-default rounded-base bg-neutral-secondary-soft md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-neutral-primary">
+          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 rounded-base bg-neutral-secondary-soft space-y-4 md:space-y-0 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-neutral-primary">
             <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-white bg-brand rounded md:bg-transparent md:text-fg-brand md:p-0"
-                aria-current="page"
+              <Link
+                to={`/`}
+                className={`py-2 text-white text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent transition-all duration-300 text-outline`}
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
+              <Link
+                to={`/tim`}
+                className={`py-2 text-white text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent transition-all duration-300 text-outline`}
               >
-                About
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
-              >
-                Services
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
-              >
-                Pricing
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
-              >
-                Contact
-              </a>
+                Tim
+              </Link>
             </li>
           </ul>
-        </div> */}
+        </div>
       </div>
     </nav>
   );

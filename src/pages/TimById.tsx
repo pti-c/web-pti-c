@@ -7,6 +7,12 @@ import { useEffect, useRef } from "react";
 import Typed from "typed.js";
 import Quest from "../component/Quest";
 import Btn from "../Element/Btn";
+import Instagram from "../Element/Icon/Sosmed/Instagram";
+import Tiktok from "../Element/Icon/Sosmed/Tiktok";
+import Github from "../Element/Icon/Sosmed/Github";
+import Thread from "../Element/Icon/Sosmed/Thread";
+import Spotify from "../Element/Icon/Sosmed/Spotify";
+import Play from "../Element/Icon/Play";
 const TimById = () => {
   /** id member */
   const { id } = useParams();
@@ -44,12 +50,11 @@ const TimById = () => {
   }, [step.no]);
 
   if (step.no === 1) {
-    message = `Haloo ${name},  perkenalkan dia ${data?.nama}👋, dia tuh dikenal sangat suka bermain sepak bola loh... ⚽`;
+    message = `Haloo ${name},  perkenalkan dia ${data?.nama}👋, ${data?.kataPengantar.pertama}`;
   } else if (step.no === 2) {
-    message =
-      "Apakah kamu tau 🤔,dia dikenal sangat mudah bersosialisasi dengan siapapun 🥰";
+    message = `${data?.kataPengantar?.kedua}`;
   } else if (step.no === 3) {
-    message = "Yuk, kita mengenal lebih jauh tentang dia.... 🎉";
+    message = `Yuk, kita mengenal lebih jauh tentang ${data?.nama}...🎊🎉`;
   } else {
     message = "";
   }
@@ -128,15 +133,17 @@ const TimById = () => {
             <Btn onClick={() => setStep({ id: id, no: 4 })}>Lanjut</Btn>
           </Quest>
         )}
+
         <div
           className={`${step.no === 1 && "blur-2xl pointer-events-none"} ${
             step.no === 2 && "blur-md pointer-events-none"
           } ${step.no === 3 && "blur-sm pointer-events-none"} ${
             step === 4 && "blur-none"
-          } flex flex-wrap justify-center gap-y-2 pt-4`}
+          } flex flex-wrap justify-center gap-y-2 pt-4 `}
         >
           <span ref={step.no === 4 ? forcedRef : undefined}></span>
-          <div className="max-w-sm md:max-w-2xl shadow-xs text-white p-1 flex flex-col md:flex-row justify-evenly z-50">
+
+          <div className="max-w-sm md:max-w-3xl md:gap-4 shadow-xs text-white p-1 flex flex-col md:flex-row justify-evenly z-50">
             <img
               className="rounded-t-base max-w-xs transition-all duration-500 bg-no-repeat rounded-xl md:rounded-3xl shadow-[0_0_12px_#00eaff]"
               // src={`${fotoId?.id === t.id ? fotoId.foto1 : t.foto2}`}
@@ -147,14 +154,51 @@ const TimById = () => {
               // }}
               alt=""
             />
-            <div className="p-1 md:pl-4">
-              <h5 className="text-center mt-3 mb-6 text-base font-semibold tracking-tight text-heading">
-                {data?.nama}
-              </h5>
-              <p className="text-xs ">
-                saya sangat suka mempelajari analisis teknologi, dan suka
-                membaca filsafat
-              </p>
+            <div className="p-1 md:pl-2">
+              <div className="flex items-center gap-4 mt-4 mb-6">
+                <h5 className="text-center text-base font-semibold tracking-tight text-heading">
+                  {data?.nama}
+                </h5>
+                <div
+                  onClick={() => setStep({ id, no: 1 })}
+                  className={`flex justify-center items-center gap-2 bg-[#00eaff] py-2 rounded-md border border-black px-4`}
+                >
+                  <p className="text-outline">Play</p> <Play height={32} width={32} fill="white"/>{" "}
+                </div>
+              </div>
+              <div className="space-y-4">
+                <p className="text-xs ">
+                  Deskripsi: {data?.kepribadian.deskripsiSingkat}
+                </p>
+                <p className="text-xs ">
+                  Kelebihan: {data?.kepribadian.kelebihan}
+                </p>
+                <p className="text-xs ">Skill: {data?.kepribadian.skill}</p>
+                <p className="text-xs ">Hobi: {data?.kepribadian.hobi}</p>
+                <p className="text-xs ">
+                  Fav Musik: {data?.kepribadian.favMusik}
+                </p>
+              </div>
+              <div className=" mt-8">
+                <p>Yuk , Kunjungi Sosial Media Saya</p>
+                <div className="flex gap-4 mt-2">
+                  <a href="">
+                    <Instagram height={32} width={32} />
+                  </a>
+                  <a href="">
+                    <Tiktok height="32" width="32" fill="#fff" />
+                  </a>
+                  <a href="">
+                    <Thread height={32} width={32} fill="white" />
+                  </a>
+                  <a href="">
+                    <Spotify height={32} width={32} />
+                  </a>
+                  <a href="">
+                    <Github height={32} width={32} />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

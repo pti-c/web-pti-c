@@ -7,6 +7,9 @@ import MainLayout from "../layouts/MainLayout";
 const WelcomePage = () => {
   /** cache is say hello */
   const isSayHelloVisible = useCurrentSayHello((s: any) => s.isSayHello);
+  const setIsSayHelloVisible = useCurrentSayHello(
+    (s: any) => s.setIsSayHello
+  );
 
   /** cache current name */
   const name = useCurrentName((s: any) => s.name);
@@ -42,6 +45,7 @@ const WelcomePage = () => {
         >
           <div className="w-full flex flex-col md:flex-row justify-evenly items-center ">
             <img
+              onClick={() => setIsSayHelloVisible(!isSayHelloVisible)}
               id="necoImage"
               className="w-52 md:w-96 animate-ping"
               src="/necos/neco.png"

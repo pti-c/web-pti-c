@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.17",
-    "aos": "^2.3.4",
+    "aos": "^3.0.0-beta.6",
     "clsx": "^2.1.1",
     "flowbite": "^4.0.1",
     "react": "^19.2.0",

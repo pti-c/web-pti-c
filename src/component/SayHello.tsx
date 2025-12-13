@@ -46,7 +46,7 @@ const SayHello = () => {
         />
         <h1 className="text-[#00eaff] text-xl md:text-2xl ">NEO-C 2025</h1>
       </div>
-      <div className="mt-4 min-w-xs max-w-xs sm:min-w-xl sm:max-w-xl min-h-24">
+      <div className="mt-4 md:p-4 min-w-xs max-w-xs sm:min-w-xl sm:max-w-xl min-h-24">
         <span
           ref={guestRef}
           className="min-w-full block text-xs text-[#00eaff] text-left my-4 capitalize"

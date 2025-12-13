@@ -4,10 +4,10 @@ import type { TypeGaleris, TypeGalerisMap } from "../Interface/_type";
 const AlbumPage = () => {
   return (
     <MainLayout>
-      <div className="flex justify-center flex-wrap gap-2">
+      <div className="flex justify-center flex-wrap gap-2 pt-4">
         {(galeries as TypeGaleris).data.map((g: TypeGalerisMap) => (
           <div
-            className="bg-white max-w-xs md:max-w-sm py-4 px-2 rounded-md shadow-[0_0_12px_#00eaff] relative z-50"
+            className="bg-white max-w-xs md:max-w-sm py-4 px-2 rounded-md shadow-[0_0_12px_#00eaff] relative z-50 flex flex-col justify-between"
             key={g.id}
           >
             <img

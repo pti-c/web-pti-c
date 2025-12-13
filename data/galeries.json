@@ -59,6 +59,21 @@
       "id": 12,
       "url": "galeries/wym-2.jpg",
       "title": "What Your Mind"
+    },
+    {
+      "id": 13,
+      "url": "galeries/wym-3.jpg",
+      "title": "What Your Mind"
+    },
+    {
+      "id": 14,
+      "url": "galeries/seminar.jpg",
+      "title": "Seminar Web Technology"
+    },
+    {
+      "id": 15,
+      "url": "galeries/tic.jpg",
+      "title": "Tic"
     }
   ]
 }

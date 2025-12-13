@@ -1,10 +1,10 @@
 import Swal from "sweetalert2";
-export const Alert = (text: string) => {
+type SwalIcon = "success" | "error" | "warning" | "info" | "question";
+export const Alert = (text: string, icon: SwalIcon = "error") => {
   Swal.fire({
-    icon: "error",
-    title: "Error..",
+    icon: icon,
+    title: icon,
     text: text,
-    width: "100%",
     showClass: {
       popup: `
       animate__animated

@@ -2,8 +2,8 @@
   "data": [
     {
       "id": 1,
-      "nama": "Nama mentor 1",
-      "foto1": "/necos/neco.webp",
+      "nama": "AISHA RISKY FEBRILA",
+      "foto1": "/mentors/aisha.jpg",
       "foto2": "/necos/neco.webp",
       "kataPengantar": {
         "pertama": "belum diisi",
@@ -26,8 +26,8 @@
     },
     {
       "id": 2,
-      "nama": "Nama mentor 2",
-      "foto1": "/necos/neco.webp",
+      "nama": "ANDIENIE DESTYA KRISWAHYUNI",
+      "foto1": "/mentors/andini.jpg",
       "foto2": "/necos/neco.webp",
       "kataPengantar": {
         "pertama": "belum diisi",
@@ -50,8 +50,8 @@
     },
     {
       "id": 3,
-      "nama": "Nama mentor 3",
-      "foto1": "/necos/neco.webp",
+      "nama": "IVAN PRAMUDITA HANGGARA",
+      "foto1": "/mentors/ivan.jpg",
       "foto2": "/necos/neco.webp",
       "kataPengantar": {
         "pertama": "belum diisi",
@@ -74,32 +74,8 @@
     },
     {
       "id": 4,
-      "nama": "Nama mentor 4",
-      "foto1": "/necos/neco.webp",
-      "foto2": "/necos/neco.webp",
-      "kataPengantar": {
-        "pertama": "belum diisi",
-        "kedua": "belum diisi"
-      },
-      "kepribadian": {
-        "hobi": "",
-        "kelebihan": "",
-        "favMusik": "",
-        "skill": "",
-        "deskripsiSingkat": ""
-      },
-      "links": {
-        "ig": "",
-        "tiktok": "",
-        "spotify": "",
-        "github": "",
-        "thread": ""
-      }
-    },
-    {
-      "id": 5,
-      "nama": "Nama mentor 5",
-      "foto1": "/necos/neco.webp",
+      "nama": "ALFIAN IRVAN ARDIANTO",
+      "foto1": "/mentors/alfian.jpg",
       "foto2": "/necos/neco.webp",
       "kataPengantar": {
         "pertama": "belum diisi",
